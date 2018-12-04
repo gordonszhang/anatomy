@@ -339,7 +339,7 @@ public class QuizController : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(0);
         if (question > NUM_QUESTIONS) EndQuiz();
         else
         {

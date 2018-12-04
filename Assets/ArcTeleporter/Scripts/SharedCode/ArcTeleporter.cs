@@ -39,8 +39,10 @@ public class ArcTeleporter : MonoBehaviour {
 		if (!HasController) {
 			// return; 
 		}
+        bool currentTriggerState = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
 
-		if (Input.GetKeyDown(KeyCode.E)) {
+
+        if (lastTriggerState && currentTriggerState) {
 			if (Time.time - timepress > threshold) {
 				teleportState = !teleportState;
 			
@@ -53,8 +55,8 @@ public class ArcTeleporter : MonoBehaviour {
 			timepress = Time.time;
 		}
 
-		// bool currentTriggerState = OVRInput.Get (OVRInput.Button.PrimaryIndexTrigger);
-		bool currentTriggerState = Input.GetKey(KeyCode.Q);
+		 
+		//bool currentTriggerState = Input.GetKey(KeyCode.Q);
 
 		// If the trigger was released this frame
 		if (lastTriggerState && !currentTriggerState) {
