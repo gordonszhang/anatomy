@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 097457064d539e5418b3f58c0c04e775
+  productGUID: 4fd5e31c11cff9442be2272ab455c9fe
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: vr try 6
+  productName: anatomy
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -124,7 +124,7 @@ PlayerSettings:
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
-  xboxOneEnable7thCore: 0
+  xboxOneEnable7thCore: 1
   isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
@@ -168,7 +168,7 @@ PlayerSettings:
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 0
-  VertexChannelCompressionMask: 214
+  VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 8.0
   tvOSSdkVersion: 0
@@ -240,7 +240,7 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  AndroidTargetArchitectures: 5
+  AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
@@ -444,7 +444,7 @@ PlayerSettings:
   ps4RemotePlayKeyAssignment: -1
   ps4RemotePlayKeyMappingDir: 
   ps4PlayTogetherPlayerCount: 0
-  ps4EnterButtonAssignment: 1
+  ps4EnterButtonAssignment: 2
   ps4ApplicationParam1: 0
   ps4ApplicationParam2: 0
   ps4ApplicationParam3: 0
@@ -452,7 +452,7 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
-  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
+  ps4Passcode: eaoEiIgxIX4a2dREbbSqWy6yhKIDCdJO
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -464,7 +464,7 @@ PlayerSettings:
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
   ps4SocialScreenEnabled: 0
-  ps4ScriptOptimizationLevel: 0
+  ps4ScriptOptimizationLevel: 2
   ps4Audio3dVirtualSpeakerCount: 14
   ps4attribCpuUsage: 0
   ps4PatchPkgPath: 
@@ -499,7 +499,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
+  psp2PackagePassword: yapnxrpMCARCr4zdGc81tBDKsMlaZTXC
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -528,14 +528,14 @@ PlayerSettings:
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
   psp2InfoBarColor: 0
-  psp2ScriptOptimizationLevel: 0
+  psp2ScriptOptimizationLevel: 2
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 256
   webGLExceptionSupport: 1
   webGLNameFilesAsHashes: 0
-  webGLDataCaching: 0
+  webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
@@ -549,13 +549,10 @@ PlayerSettings:
     4: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     7: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     13: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
-    17: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     18: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     19: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
-    20: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     21: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     23: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
-    24: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     25: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     26: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
     27: VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER
@@ -569,14 +566,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: vr try 6
+  metroPackageName: anatomy
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: vr try 6
+  metroApplicationDescription: anatomy
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -623,7 +620,7 @@ PlayerSettings:
   XboxOneCapability: []
   XboxOneGameRating: {}
   XboxOneIsContentPackage: 0
-  XboxOneEnableGPUVariability: 0
+  XboxOneEnableGPUVariability: 1
   XboxOneSockets: {}
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
@@ -634,13 +631,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    UNet: 1
+  cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: ee27c118-4a41-46b6-a320-6b9da3a86063
-  projectName: vr try 6
-  organizationId: jxia_unity
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
