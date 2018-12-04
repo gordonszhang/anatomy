@@ -18,7 +18,7 @@ public class Clickable : MonoBehaviour
     void Update()
     {
 
-        if ((Input.GetKeyDown(KeyCode.Z) || OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch)) && _isColliding)
+        if ((Input.GetKeyDown(KeyCode.Z) || OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) && _isColliding)
         {
             
             switch (_types[behavior])

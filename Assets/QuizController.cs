@@ -185,10 +185,13 @@ public class QuizController : MonoBehaviour
         List<int> tempIndices = new List<int>();
         foreach (Clickable c in buttons)
         {
+
             c.SetText(_modelNames[r]);
             c.SetIndex(r);
-            r = rnd.Next(_modelNames.Count);
+
             tempIndices.Add(r);
+            r = rnd.Next(_modelNames.Count);
+     
             while (tempIndices.Contains(r))
             {
                 r = rnd.Next(_modelNames.Count);
@@ -224,6 +227,7 @@ public class QuizController : MonoBehaviour
 
     public void EasyAnswer(int i)
     {
+        Debug.Log("easy");
         if (i == correctIndex)
         {
             description.text = string.Format("Correct! The answer was {0}.", _modelNames[correctIndex]);
@@ -276,7 +280,7 @@ public class QuizController : MonoBehaviour
             }
             bool rotationCheck = false;
             float diff = Quaternion.Angle(o.transform.rotation, _modelInfo[o.name].rotation);
-            rotationCheck = diff < 30f;
+            rotationCheck = diff < 60f;
             if (g._willSnap && rotationCheck) points++;
             else missed.Add(o.name);
         }
@@ -335,7 +339,7 @@ public class QuizController : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         if (question > NUM_QUESTIONS) EndQuiz();
         else
         {
@@ -370,7 +374,8 @@ public class QuizController : MonoBehaviour
         if (mode == "hard") return;
         string s = o.name;
         OVRGrabbable g = o.GetComponent<OVRGrabbable>();
-        if (g._willSnap) MediumAnswer(true);
+        float diff = Quaternion.Angle(o.transform.rotation, _modelInfo[o.name].rotation);
+        if (g._willSnap && diff < 60f) MediumAnswer(true);
         else MediumAnswer(false);
     }
 }
