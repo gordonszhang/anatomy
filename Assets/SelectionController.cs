@@ -95,7 +95,7 @@ public class SelectionController : MonoBehaviour
             Debug.Log(modelName);
         }
         //SetSelected(GameObject.Find("Brain"));
-        AudioClip clip = Resources.Load<AudioClip>("audio/Welcome");
+        AudioClip clip = Resources.Load<AudioClip>("audio/Learn");
         playingAudio.PlayOneShot(clip);
     }
 

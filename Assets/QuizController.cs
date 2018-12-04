@@ -309,7 +309,6 @@ public class QuizController : MonoBehaviour
                 }
             }
 
-
             description.text = t;
             AudioClip a = Resources.Load<AudioClip>("audio/Correct");
             audioSource.PlayOneShot(a);
@@ -335,6 +334,17 @@ public class QuizController : MonoBehaviour
             AudioClip a = Resources.Load<AudioClip>("audio/Incorrect");
             audioSource.PlayOneShot(a);
         }
+        foreach (string name in _modelNames) {
+                GameObject o = GameObject.Find(name);
+                Renderer re = o.GetComponent<Renderer>();
+                while (!re)
+                {
+                    o = o.transform.Find(o.name).gameObject;
+                    re = o.GetComponent<Renderer>();
+                }
+                if (missed.Contains(name)) re.material = Resources.Load<Material>("HighlightedClear");
+                else re.material = Resources.Load<Material>("GreenClear");
+            }
     }
 
     IEnumerator Wait()
@@ -375,7 +385,19 @@ public class QuizController : MonoBehaviour
         string s = o.name;
         OVRGrabbable g = o.GetComponent<OVRGrabbable>();
         float diff = Quaternion.Angle(o.transform.rotation, _modelInfo[o.name].rotation);
-        if (g._willSnap && diff < 60f) MediumAnswer(true);
-        else MediumAnswer(false);
+        Renderer re = o.GetComponent<Renderer>();
+        while (!re)
+        {
+            o = o.transform.Find(o.name).gameObject;
+            re = o.GetComponent<Renderer>();
+        }
+        if (g._willSnap && diff < 60f) {
+            re.material = Resources.Load<Material>("GreenClear");
+            MediumAnswer(true);
+        }
+        else {
+            re.material = Resources.Load<Material>("HighlightedClear");
+            MediumAnswer(false);
+        }
     }
 }
