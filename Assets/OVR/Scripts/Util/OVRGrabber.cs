@@ -151,9 +151,9 @@ public class OVRGrabber : MonoBehaviour
 
 		float prevFlex = m_prevFlex;
 		// Update values from inputs
-		m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+		//m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
        // m_prevFlex = Input.GetAxis("LTrigger");
-       // m_prevFlex = System.Convert.ToSingle(Input.GetKey(KeyCode.X));
+       m_prevFlex = System.Convert.ToSingle(Input.GetKey(KeyCode.X));
 		CheckForGrabOrRelease(prevFlex);
     }
 

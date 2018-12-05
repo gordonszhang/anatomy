@@ -1977,6 +1977,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11454254, guid: b0528537cb83e274c845cae208d6f145, type: 2}
+      propertyPath: hideByDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454254, guid: b0528537cb83e274c845cae208d6f145, type: 2}
+      propertyPath: dimOnHideRequest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454254, guid: b0528537cb83e274c845cae208d6f145, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0528537cb83e274c845cae208d6f145, type: 2}
   m_IsPrefabAsset: 0

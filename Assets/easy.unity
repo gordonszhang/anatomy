@@ -271,7 +271,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!54 &36590690
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2299,7 +2302,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!54 &684048264
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2546,7 +2552,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!4 &822116500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 458426798ec768a418345b71252b864c,
@@ -3079,7 +3088,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!1 &953644969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,7 +3716,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!54 &1023963415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4356,7 +4371,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!54 &1096799441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5598,7 +5616,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!1 &1365289008
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,7 +6985,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692810969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc6b4676b6c680418f53d2e00c0343f, type: 3}
   m_Name: 
@@ -7266,7 +7287,10 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  _willSnap: 0
+  _willCheck: 0
   selectionController: {fileID: 0}
+  quizController: {fileID: 0}
 --- !u!54 &1792885817
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7747,6 +7771,7 @@ MonoBehaviour:
   description: {fileID: 2112996606}
   score: {fileID: 366893293}
   partNames: {fileID: 0}
+  models: []
   buttons:
   - {fileID: 724173287}
   - {fileID: 359416702}

@@ -250,7 +250,7 @@ public class OVRGazePointer : MonoBehaviour {
         trailFollower.rotation = trailRotation;
 
         // Keep track of cursor movement direction
-        positionDelta = transform.position - lastPosition;
+        //positionDelta = transform.position - lastPosition;
         lastPosition = transform.position;
         
         positionSetsThisFrame = 0;

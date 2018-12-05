@@ -191,7 +191,7 @@ public class QuizController : MonoBehaviour
 
             tempIndices.Add(r);
             r = rnd.Next(_modelNames.Count);
-     
+
             while (tempIndices.Contains(r))
             {
                 r = rnd.Next(_modelNames.Count);
@@ -268,13 +268,14 @@ public class QuizController : MonoBehaviour
 
     public void HardAnswer()
     {
-        
+
         List<string> missed = new List<string>();
         for (int i = 0; i < _modelNames.Count; i++)
         {
             GameObject o = models[i];
             OVRGrabbable g = o.GetComponent<OVRGrabbable>();
-            while (!g) {
+            while (!g)
+            {
                 o = o.transform.Find(o.name).gameObject;
                 g = o.GetComponent<OVRGrabbable>();
             }
@@ -334,17 +335,40 @@ public class QuizController : MonoBehaviour
             AudioClip a = Resources.Load<AudioClip>("audio/Incorrect");
             audioSource.PlayOneShot(a);
         }
-        foreach (string name in _modelNames) {
-                GameObject o = GameObject.Find(name);
-                Renderer re = o.GetComponent<Renderer>();
-                while (!re)
+        foreach (string name in _modelNames)
+        {
+            bool correct = !missed.Contains(name);
+            GameObject o = GameObject.Find(name);
+
+            Renderer re = o.GetComponent<Renderer>();
+            if (!re)
+            {
+                if (nameToMaterialLists.ContainsKey(name))
                 {
-                    o = o.transform.Find(o.name).gameObject;
-                    re = o.GetComponent<Renderer>();
+                    foreach (Transform child in o.transform)
+                    {
+                        Transform c = child.transform.Find(child.name);
+                        re = c.GetComponent<Renderer>();
+                        if (correct) re.material = Resources.Load<Material>("GreenClear");
+                        else re.material = Resources.Load<Material>("HighlightedClear");
+                    }
                 }
-                if (missed.Contains(name)) re.material = Resources.Load<Material>("HighlightedClear");
-                else re.material = Resources.Load<Material>("GreenClear");
+                else
+                {
+                    while (!re)
+                    {
+                        o = o.transform.Find(o.name).gameObject;
+                        re = o.GetComponent<Renderer>();
+                        if (correct) re.material = Resources.Load<Material>("GreenClear");
+                        else re.material = Resources.Load<Material>("HighlightedClear");
+                    }
+                }
             }
+            else {
+                if (correct) re.material = Resources.Load<Material>("GreenClear");
+                else re.material = Resources.Load<Material>("HighlightedClear");
+            }
+        }
     }
 
     IEnumerator Wait()
@@ -374,8 +398,8 @@ public class QuizController : MonoBehaviour
 
         foreach (Clickable c in buttons)
         {
-            if(c != null)
-            c.gameObject.SetActive(false);
+            if (c != null)
+                c.gameObject.SetActive(false);
         }
     }
 
@@ -386,20 +410,45 @@ public class QuizController : MonoBehaviour
         
         OVRGrabbable g = o.GetComponent<OVRGrabbable>();
         float diff = Quaternion.Angle(o.transform.rotation, _modelInfo[o.name].rotation);
+
+        bool correct = g._willSnap && diff < 60f;
+
         Renderer re = o.GetComponent<Renderer>();
-        
-        while (!re)
+        if (!re)
         {
-            
-            o = o.transform.Find(o.name).gameObject;
-            re = o.GetComponent<Renderer>();
-        }
-        if (g._willSnap && diff < 60f) {
-            re.material = Resources.Load<Material>("GreenClear");
-            MediumAnswer(true);
+            if (nameToMaterialLists.ContainsKey(s))
+            {
+                foreach (Transform child in o.transform)
+                {
+                    Transform c = child.transform.Find(child.name);
+                    re = c.GetComponent<Renderer>();
+                    if (correct) re.material = Resources.Load<Material>("GreenClear");
+                    else re.material = Resources.Load<Material>("HighlightedClear");
+                }
+            }
+            else
+            {
+                while (!re)
+                {
+                    o = o.transform.Find(o.name).gameObject;
+                    re = o.GetComponent<Renderer>();
+                    Debug.Log(string.Format("name: {0}", o.name));
+                    if (correct) re.material = Resources.Load<Material>("GreenClear");
+                    else re.material = Resources.Load<Material>("HighlightedClear");
+                }
+            }
         }
         else {
-            re.material = Resources.Load<Material>("HighlightedClear");
+            if (correct) re.material = Resources.Load<Material>("GreenClear");
+            else re.material = Resources.Load<Material>("HighlightedClear");
+        }
+
+        if (correct)
+        {
+            MediumAnswer(true);
+        }
+        else
+        {
             MediumAnswer(false);
         }
     }
