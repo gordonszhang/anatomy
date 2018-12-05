@@ -391,7 +391,7 @@ public class QuizController : MonoBehaviour
         while (!re)
         {
             
-            //o = o.transform.Find(o.name).gameObject;
+            o = o.transform.Find(o.name).gameObject;
             re = o.GetComponent<Renderer>();
         }
         if (g._willSnap && diff < 60f) {
