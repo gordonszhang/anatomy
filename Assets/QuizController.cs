@@ -383,12 +383,15 @@ public class QuizController : MonoBehaviour
     {
         if (mode == "hard") return;
         string s = o.name;
+        
         OVRGrabbable g = o.GetComponent<OVRGrabbable>();
         float diff = Quaternion.Angle(o.transform.rotation, _modelInfo[o.name].rotation);
         Renderer re = o.GetComponent<Renderer>();
+        
         while (!re)
         {
-            o = o.transform.Find(o.name).gameObject;
+            
+            //o = o.transform.Find(o.name).gameObject;
             re = o.GetComponent<Renderer>();
         }
         if (g._willSnap && diff < 60f) {
