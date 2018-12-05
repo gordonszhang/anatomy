@@ -69,7 +69,7 @@ public class ArcTeleporter : MonoBehaviour {
 					if (teleportedUpAxis == UpDirection.TargetNormal) {
 						up = arcRaycaster.Normal;
 					}
-					objectToMove.position = arcRaycaster.HitPoint + up * height;
+					objectToMove.position = arcRaycaster.HitPoint + up * (height + 1);
 
 				}
 			}

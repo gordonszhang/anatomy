@@ -28,7 +28,7 @@ public class SelectionController : MonoBehaviour
 
     private Dictionary<string, PositionRotation> _modelInfo;
 
-    private List<string> _modelNames = new List<string> { "Brain", "Ribcage", "LeftLung", "RightLung", "Heart" };
+    private List<string> _modelNames = new List<string> { "Brain", "Ribcage", "LeftLung", "RightLung", "Heart", "Backbone" };
 
     public AudioSource playingAudio;
 
