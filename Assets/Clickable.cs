@@ -40,23 +40,9 @@ public class Clickable : MonoBehaviour
 				case "Back":
                     Scene currentScene = SceneManager.GetActiveScene();
                     string sceneName = currentScene.name;
-                    switch (sceneName)
-                    {
-                        case "easy":
-                            SceneManager.LoadScene("menu");
-                            SceneManager.UnloadSceneAsync("easy");
-                            break;
-                        case "medium":
-                            SceneManager.LoadScene("menu");
-                            SceneManager.UnloadSceneAsync("medium");
-                            break;
-                        case "hard":
-                            SceneManager.LoadScene("menu");
-                            SceneManager.UnloadSceneAsync("hard");
-                            break;
-
-                    }
-					
+                    
+                    SceneManager.LoadScene("menu");
+                    SceneManager.UnloadSceneAsync(sceneName);	
                     break;
                 case "Easy":
 					SceneManager.LoadScene("easy");
