@@ -40,23 +40,14 @@ public class ArcTeleporter : MonoBehaviour {
 			// return; 
 		}
         bool currentTriggerState = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
-
+		// bool currentTriggerState = Input.GetKey(KeyCode.E);
 
         if (lastTriggerState && currentTriggerState) {
-			if (Time.time - timepress > threshold) {
-				teleportState = !teleportState;
-			
+				teleportState = true;
 				GetComponent<LineRenderer>().enabled = teleportState;
 				transform.Find("inner_select").gameObject.SetActive(teleportState);
-
-				Debug.Log("teleport state changed");
-			}
-
-			timepress = Time.time;
+				Debug.Log("teleport enabled");
 		}
-
-		 
-		//bool currentTriggerState = Input.GetKey(KeyCode.Q);
 
 		// If the trigger was released this frame
 		if (lastTriggerState && !currentTriggerState) {
@@ -69,7 +60,7 @@ public class ArcTeleporter : MonoBehaviour {
 					if (teleportedUpAxis == UpDirection.TargetNormal) {
 						up = arcRaycaster.Normal;
 					}
-					objectToMove.position = arcRaycaster.HitPoint + up * (height + 1);
+					objectToMove.position = arcRaycaster.HitPoint + up * height;
 
 				}
 			}
@@ -79,6 +70,10 @@ public class ArcTeleporter : MonoBehaviour {
 			}
 
 			objectToMove.rotation = Quaternion.LookRotation (forward, up);
+			teleportState = false;
+			GetComponent<LineRenderer>().enabled = teleportState;
+			transform.Find("inner_select").gameObject.SetActive(teleportState);
+			Debug.Log("teleport disabled");
 		}
 
 		lastTriggerState = currentTriggerState;
