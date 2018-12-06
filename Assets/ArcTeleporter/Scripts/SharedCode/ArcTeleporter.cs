@@ -11,7 +11,7 @@ public class ArcTeleporter : MonoBehaviour {
 	public Transform objectToMove;
 
 	[Tooltip("Height of object being teleported. How far off the ground the object should land.")]
-	public float height = 1.29f;
+	public float height = 2.29f;
 	[Tooltip("When teleporting, should object be aligned with the world or destination")]
 	public UpDirection teleportedUpAxis = UpDirection.World;
 

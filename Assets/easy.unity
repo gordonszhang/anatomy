@@ -6005,6 +6005,11 @@ Prefab:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0.0627451
       objectReference: {fileID: 0}
+    - target: {fileID: 114288052106155204, guid: c91481f34b0c048ef9d5ef2a23edc502,
+        type: 2}
+      propertyPath: height
+      value: 2.29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91481f34b0c048ef9d5ef2a23edc502, type: 2}
   m_IsPrefabAsset: 0
