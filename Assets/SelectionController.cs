@@ -32,6 +32,8 @@ public class SelectionController : MonoBehaviour
 
     public AudioSource playingAudio;
 
+    public GameObject startingArrow;
+
     private Dictionary<string, string> _descriptions = new Dictionary<string, string> {
         { "Heart", "The heart is a muscular organ about the size of a fist, located just behind and slightly left of the breastbone. The heart pumps blood through the network of arteries and veins called the cardiovascular system." },
         { "RightLung", "This part of the lung has three lobes and has more segments than the left. These lobes are divided into superior (upper), middle, and inferior (lower), by horizontal and oblique fissures. The right lung has a deep concavity on the inner surface that is called the cardiac impression, at the same level as the heart. It also has two bronchi, airway passages that regulate the flow of air into the lungs. Regarding its size, it is shorter and wider than the left lung." },
@@ -101,6 +103,7 @@ public class SelectionController : MonoBehaviour
 
     public void SetSelected(GameObject o)
     {
+        startingArrow.SetActive(false);
         // Check if object is segmented or not. If it is, then assign colors and tags based on dict defined above
         string s = o.name;
 
