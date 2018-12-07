@@ -91,6 +91,7 @@ public class SelectionController : MonoBehaviour
         {
             Vector3 pos = new Vector3();
             Quaternion rot = new Quaternion();
+            GameObject b = GameObject.FindWithTag(modelName);
             pos = GameObject.Find(modelName).transform.position;
             rot = GameObject.Find(modelName).transform.rotation;
             _modelInfo[modelName] = new PositionRotation(pos, rot);
@@ -162,11 +163,7 @@ public class SelectionController : MonoBehaviour
             {
                 GameObject ob = _selectedObject;
                 Renderer r = ob.GetComponent<Renderer>();
-                while (!r)
-                {
-                    ob = ob.transform.Find(_selectedObject.name).gameObject;
-                    r = ob.GetComponent<Renderer>();
-                }
+                if (!r) r = ob.GetComponentInChildren<Renderer>();
                 r.material.shader = Shader.Find("Standard");
             }
 
@@ -185,11 +182,7 @@ public class SelectionController : MonoBehaviour
                 {
                     GameObject ob = clearObject;
                     Renderer r = ob.GetComponent<Renderer>();
-                    while (!r)
-                    {
-                        ob = ob.transform.Find(clearObject.name).gameObject;
-                        r = ob.GetComponent<Renderer>();
-                    }
+                    if (!r) r = ob.GetComponentInChildren<Renderer>();
                     r.material = Resources.Load<Material>("Clear");
                 }
                 clearObject = null;
@@ -215,12 +208,7 @@ public class SelectionController : MonoBehaviour
         {
             GameObject ob = clearObject;
             Renderer r = ob.GetComponent<Renderer>();
-            while (!r)
-            {
-                Debug.Log(string.Format("Looking in {0}", s));
-                ob = ob.transform.Find("Clear" + s).gameObject;
-                r = ob.GetComponent<Renderer>();
-            }
+            if (!r) r = ob.GetComponentInChildren<Renderer>();
             r.material = Resources.Load<Material>("HighlightedClear");
         }
 
@@ -235,11 +223,14 @@ public class SelectionController : MonoBehaviour
 
     public void SnapModel(GameObject o)
     {
+        
         string s = o.name;
         o.transform.position = _modelInfo[s].position;
         o.transform.rotation = _modelInfo[s].rotation;
-        if (_selectedObject != null && _selectedObject != o)
+        Debug.Log("deselect");
+        if (_selectedObject != null)
         {
+            
             if (nameToMaterialLists.ContainsKey(_selectedObject.name))
             {
                 Dictionary<string, Material> materialList = nameToMaterialLists[_selectedObject.name];
@@ -259,13 +250,10 @@ public class SelectionController : MonoBehaviour
             }
             else
             {
+
                 GameObject ob = _selectedObject;
                 Renderer r = ob.GetComponent<Renderer>();
-                while (!r)
-                {
-                    ob = ob.transform.Find(_selectedObject.name).gameObject;
-                    r = ob.GetComponent<Renderer>();
-                }
+                if (!r) r = ob.GetComponentInChildren<Renderer>();
                 r.material.shader = Shader.Find("Standard");
             }
         }
@@ -284,11 +272,7 @@ public class SelectionController : MonoBehaviour
             {
                 GameObject ob = clearObject;
                 Renderer r = ob.GetComponent<Renderer>();
-                while (!r)
-                {
-                    ob = ob.transform.Find(clearObject.name).gameObject;
-                    r = ob.GetComponent<Renderer>();
-                }
+                if (!r) r = ob.GetComponentInChildren<Renderer>();
                 r.material = Resources.Load<Material>("Clear");
             }
             clearObject = null;
